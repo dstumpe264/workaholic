@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+ gem 'react-rails'
+ gem 'react_on_rails', '~> 6'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
