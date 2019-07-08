@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
  gem 'react-rails'
  gem 'react_on_rails', '~> 6'
+ gem 'webpacker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
