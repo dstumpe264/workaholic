@@ -1,0 +1,15 @@
+<h1>Shows all jobs a user has</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Wage</th>
+    <th></th>
+  </tr>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.title %></td>
+        <td><%= link_to 'Show', job_path(job) %></td>
+      </tr>
+    <% end %>
+</table>

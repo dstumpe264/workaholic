@@ -1,0 +1,30 @@
+<h1>New Job</h1>
+<%= form_with scope: :job, url: jobs_path, local: true do |form| %>
+
+ <% if @job.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@job.errors.count, "error") %>
+      prohibited this job from being created:
+    </h2>
+    <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <!-- <p>
+    <%= form.label :pwd %><br>
+    <%= form.text_field :pwd %>
+  </p> -->
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
