@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :users, shallow: true do
     resources :jobs
   end
-  resources :jobs, only : [:show, :edit, :update, :destroy]
+  resources :jobs, only: [:show, :edit, :update, :destroy]
   root 'welcome#index'
 end
