@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to @users
+      redirect_to @user
     else
       render 'edit'
     end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to @users_path
+    redirect_to users_path
   end
 
 private
