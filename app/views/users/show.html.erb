@@ -4,3 +4,25 @@
 <h1> Password: </h1>
 <%= @user.pwd %>
 </p>
+
+<h1>Jobs</h1>
+<%= @user.jobs.each do |job| %>
+<p>
+  <strong>Title:</strong>
+  <%= job.title %>
+</p>
+
+
+<h1><u>Add a job</u></h1>
+<%= form_with(model: [ @user, @user.job.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
