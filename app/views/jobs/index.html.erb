@@ -6,7 +6,7 @@
     <th>Wage</th>
     <th></th>
   </tr>
-    <% @jobs.each do |job| %>
+    <% @user.jobs.each do |job| %>
       <tr>
         <td><%= job.title %></td>
         <td><%= link_to 'Show', job_path(job) %></td>

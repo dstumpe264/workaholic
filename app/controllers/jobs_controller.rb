@@ -17,15 +17,15 @@ class JobsController < ApplicationController
   end
 
   def create
-    @user = User.find(params(:user_id))
-    @job = @user.job.create(job_params)
+    @user = User.find(params[:user_id])
+    @job = @user.jobs.create(job_params)
     redirect_to user_path(@user)
-    
-    if @job.save
-      redirect_to @job
-    else
-      render 'new'
-    end
+
+    # if @job.save
+    #   redirect_to @job
+    # else
+    #   render 'new'
+    # end
   end
 
   def update
