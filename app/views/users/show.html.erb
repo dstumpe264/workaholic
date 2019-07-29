@@ -8,17 +8,8 @@
 <h1>Jobs</h1>
 <%= render @user.jobs %>
 
-<%= form_with(model: [ @user, @user.jobs.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-<%# <%= link_to 'Add a New Job', new_user_job_path(@user) %> %>
+<h2>Add Job</h2>
+<%= render 'job/form' %>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>

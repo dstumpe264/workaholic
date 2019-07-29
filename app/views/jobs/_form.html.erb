@@ -1,0 +1,10 @@
+<%= form_with(model: [ @user, @user.jobs.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
