@@ -1,11 +1,11 @@
 class JobsController < ApplicationController
 
   def index
-    @jobs = Job.all
   end
 
   def show
-    @job = Job.find(params[:id])
+    @user = User.find(params[:user_id])
+    @job = @user.jobs.find(params[:id])
   end
 
   def new
@@ -13,7 +13,8 @@ class JobsController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:user_id])
+    @job = @user.jobs.find(params[:id])
   end
 
   def create
@@ -33,6 +34,10 @@ class JobsController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:user_id])
+    @job = @user.jobs.find(params[:id])
+    @job.destroy
+    redirect_to user_path(@user)
   end
 
 private

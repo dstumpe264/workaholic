@@ -3,3 +3,12 @@
 <%= @job.title %>
 <h1> Wage: </h1>
 </p>
+<p>
+  <%= link_to 'Edit Job', edit_user_job_path(@user) %>
+</p>
+<p>
+<%= link_to 'Destroy Job',
+  user_job_path,
+  method: :delete,
+  data: {confirm: 'Are you sure?'} %>
+</p>
